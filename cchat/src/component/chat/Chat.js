@@ -7,7 +7,7 @@ import logo from "../../images/logo.png"
 import "./chat.css"
 
 let socket;
-const ENDPOINT = "https://samantachat.onrender.com/"
+const ENDPOINT = "https://chatbackend-30do.onrender.com/"
 
 const Chat = () => {
   const [id,setid] = useState("");
