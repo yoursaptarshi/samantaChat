@@ -2,7 +2,7 @@ const http=require("http");
 const express = require("express");
 const cors =require("cors");
 const socketIO =require("socket.io");
-
+const path = require('path')
 const app =express();
 const port =process.env.PORT;
 
@@ -34,10 +34,10 @@ io.on("connection",(socket)=>{
    
 })
 
-app.use(express.static(path.join(__dirname, "../frontend/build")));
+app.use(express.static(path.join(__dirname, "../cchat/build")));
 
 app.get("*", (req, res) => {
-    res.sendFile(path.resolve(__dirname, "../frontend/build/index.html"));
+    res.sendFile(path.resolve(__dirname, "../cchat/build/index.html"));
 });
 
 
