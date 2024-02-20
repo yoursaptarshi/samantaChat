@@ -12,6 +12,11 @@ app.use(cors());
 app.get("/",(req,res)=>{
     res.send("Its working")
 })
+app.use(express.static(path.join(__dirname, "../cchat/build")));
+
+app.get("*", (req, res) => {
+    res.sendFile(path.resolve(__dirname, "../cchat/build/index.html"));
+});
 const server =http.createServer(app);
 
 const io=socketIO(server);
@@ -34,11 +39,7 @@ io.on("connection",(socket)=>{
    
 })
 
-app.use(express.static(path.join(__dirname, "../cchat/build")));
 
-app.get("*", (req, res) => {
-    res.sendFile(path.resolve(__dirname, "../cchat/build/index.html"));
-});
 
 
 server.listen(port,()=>{
