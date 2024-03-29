@@ -1,1 +1,1 @@
-# samantaChat
+Welcome to Samanta Chat
